@@ -9,8 +9,11 @@
 
 ## How Has This Been Tested?
 <!--- Please describe in detail how you tested your changes. -->
-<!--- Include details of your testing environment, the tests you ran to -->
-<!--- see how your change affects other areas of the code, etc. -->
+- [ ] Checked affected area manually on my own / staging system
+<!--- Include details of your testing environment -->
+<!--- Detail the tests you ran to see how your change affects other areas of the code, etc. -->
+- [ ] Ran automated tests on my own system
+- [ ] Confirmed it passed the GitHub actions tests
 
 ## Screenshots (if appropriate):
 
@@ -19,6 +22,7 @@
 - [ ] Bug fix (non-breaking change that fixes an issue)
 - [ ] New feature (non-breaking change that adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to change)
+- [ ] Documentation
 
 ## Checklist:
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
