@@ -97,6 +97,10 @@ licensing it to us so we can keep distributing our software under an open
 licence. This reflects our charitable object of providing content and software
 under an open licence wherever practicable.
 
+## Other contributors
+
+As well as the sign off by the primary author/s at the bottom of the commit, 
+list any other contributors using "Co-authored-by: Contributor Name <email@example.com>"_ immediately following the sign off line/s.
 ## AI-assisted contributions
 
 We welcome contributions that use AI tools, provided you take responsibility
