@@ -104,8 +104,7 @@ for what you submit. If you use an AI tool to generate a meaningful part of a
 contribution:
 
 - **Disclose it.** Add a short note in your pull request description, for
-  example: _"Parts of this contribution were generated or assisted by
-  [tool name]."_ Minor use, such as autocomplete or grammar checking, does not
+  example: _"Assisted-by: <agent-name>/<model-id>"_ Minor use, such as autocomplete or grammar checking, does not
   need disclosing.
 - **Review it.** You are responsible for reviewing all AI-generated material
   before submitting, to the same standard as any other contribution. Be
