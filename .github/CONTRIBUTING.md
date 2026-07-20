@@ -47,13 +47,13 @@ you are working in, and prefer aiming pull requests at `main`.
 ## Branches
 
 Name branches using the [Conventional Branch](https://conventionalbranch.org/#summary)
-convention, with a type prefix followed by a short description, for example:
+convention, with a type prefix followed by the issue number and a short description, for example:
 
-- `feature/add-postcode-search`
-- `bugfix/fix-pagination`
-- `hotfix/correct-broken-link`
-- `chore/update-dependencies`
-- `doc/clarify-setup-steps`
+- `feature/123-add-postcode-search`
+- `bugfix/890-fix-pagination`
+- `hotfix/123-correct-broken-link`
+- `chore/21-update-dependencies`
+- `doc/7391-clarify-setup-steps`
 
 Assign pull requests you create to yourself so it is clear who is driving each
 change.
