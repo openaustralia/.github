@@ -68,7 +68,7 @@ change.
 
 ## Commits and sign-off
 
-We are moving towards requiring a sign-off on every commit so that we have a
+We are moving towards requiring a sign-off trailer on every commit so that we have a
 clear, documented record that each contribution can be lawfully included in our
 projects. This matters more than ever now that AI tools are commonly involved
 in writing code.
