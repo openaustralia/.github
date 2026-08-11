@@ -86,8 +86,10 @@ right to submit it under our licence.
 
 ## Other contributors
 
-As well as the sign off by the primary author/s at the bottom of the commit, 
-list any other contributors using "Co-authored-by: Contributor Name <email@example.com>"_ immediately following the sign off line/s.
+As well as the sign off by the primary author/s at the bottom of the commit,
+list any other contributors using "Co-authored-by: Contributor Name
+<email@example.com>" immediately following the sign off line/s.
+
 ## AI-assisted contributions
 
 We welcome contributions that use AI tools, provided you take responsibility
@@ -95,8 +97,8 @@ for what you submit. If you use an AI tool to generate a meaningful part of a
 contribution:
 
 - **Disclose it.** Add a short note in your pull request description, for
-  example: _"Assisted-by: <agent-name>/<model-id>"_ Minor use, such as autocomplete or grammar checking, does not
-  need disclosing.
+  example: _"Assisted-by: <agent-name>:<model-id>"_ Minor use, such as
+  autocomplete or grammar checking, does not need disclosing.
 - **Review it.** You are responsible for reviewing all AI-generated material
   before submitting, to the same standard as any other contribution. Be
   prepared to explain and support the change.
