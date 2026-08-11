@@ -48,9 +48,10 @@ Keep them consistent by hand when editing:
   of any party, candidate, or position.
 - Australian English throughout.
 - No em dashes. Use a hyphen, a comma, or a full stop.
-- Disclose AI involvement on a contribution using the trailer documented in
-  `.github/CONTRIBUTING.md`: `Assisted-by: <agent-name>:<model-id>`. Report the
-  model actually used, not a remembered default.
+- Disclose AI involvement in both places `.github/CONTRIBUTING.md` asks for:
+  an `Assisted-by: <agent-name>:<model-id>` trailer on each commit, and a note
+  in the pull request description. Report the model actually used, not a
+  remembered default.
 - `.github/CONTRIBUTING.md` is still marked as evolving (see the "Open
   questions" section at the end of it), so don't present unsettled points as
   decided. Whether OAF reinstates a contributor licence agreement is one of
