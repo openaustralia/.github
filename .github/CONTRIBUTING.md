@@ -96,9 +96,17 @@ We welcome contributions that use AI tools, provided you take responsibility
 for what you submit. If you use an AI tool to generate a meaningful part of a
 contribution:
 
-- **Disclose it.** Add a short note in your pull request description, for
-  example: _"Assisted-by: <agent-name>:<model-id>"_ Minor use, such as
-  autocomplete or grammar checking, does not need disclosing.
+- **Disclose it,** in two places: an `Assisted-by` trailer on each commit the
+  tool helped produce, and a short note in the pull request description. Both
+  name the tool and the specific model, in the same form:
+
+  ```
+  Assisted-by: Claude Code:claude-opus-5
+  ```
+
+  The commit trailer belongs in the trailer block at the end of the message,
+  alongside `Signed-off-by`. Report the model you actually used. Minor use,
+  such as autocomplete or grammar checking, does not need disclosing.
 - **Review it.** You are responsible for reviewing all AI-generated material
   before submitting, to the same standard as any other contribution. Be
   prepared to explain and support the change.
