@@ -8,7 +8,7 @@ and others) when working with code in this repository.
 `openaustralia/.github` is a [GitHub special repository](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file):
 files under `.github/` here are inherited by every repository in the
 `openaustralia` org that doesn't provide its own copy. `profile/README.md` is
-unrelated to that mechanism — it's the org's [profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#adding-a-public-profile-readme-for-your-organization),
+unrelated to that mechanism. It's the org's [profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#adding-a-public-profile-readme-for-your-organization),
 shown at github.com/openaustralia. Don't confuse it with the root `README.md`,
 which documents this repository itself.
 
@@ -25,8 +25,8 @@ confirmation is opening a new issue after merge.
 
 ## Files that reference each other
 
-Several files cross-reference one another by content, not by any tooling —
-keep them consistent by hand when editing:
+Several files cross-reference one another by content, not by any tooling.
+Keep them consistent by hand when editing:
 
 - OAF's five public services are listed in **four** places: the "Our services"
   table in `profile/README.md`, the "Support our work" paragraph in that same
@@ -35,7 +35,7 @@ keep them consistent by hand when editing:
   `.github/ISSUE_TEMPLATE/feature_request.yml`. Adding, renaming, or retiring a
   service means editing all four. Nothing checks this for you.
 - `.github/CODEOWNERS` names a team (`@openaustralia/staff`) that must
-  actually have write access to repos inheriting this file — a team with no
+  actually have write access to repos inheriting this file. A team with no
   access is silently ignored by GitHub rather than erroring (see commit
   `b09ffcd`, which fixed exactly this).
 - The `type:` key in each issue form (`Bug`, `Feature`) names an issue type
@@ -47,10 +47,11 @@ keep them consistent by hand when editing:
 - Non-partisan: nothing in these files should imply endorsement or criticism
   of any party, candidate, or position.
 - Australian English throughout.
+- No em dashes. Use a hyphen, a comma, or a full stop.
 - Disclose AI involvement on a contribution using the trailer documented in
   `.github/CONTRIBUTING.md`: `Assisted-by: <agent-name>:<model-id>`. Report the
   model actually used, not a remembered default.
 - `.github/CONTRIBUTING.md` is still marked as evolving (see the "Open
-  questions" section at the end of it) — don't present unsettled points as
+  questions" section at the end of it), so don't present unsettled points as
   decided. Whether OAF reinstates a contributor licence agreement is one of
   those open questions.
