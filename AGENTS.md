@@ -12,33 +12,45 @@ unrelated to that mechanism — it's the org's [profile README](https://docs.git
 shown at github.com/openaustralia. Don't confuse it with the root `README.md`,
 which documents this repository itself.
 
-There is no build, lint, or test step — the repository is markdown, one
-`CODEOWNERS` file, and one `FUNDING.yml`. Changes are reviewed by opening a PR
-against `main` per `.github/CONTRIBUTING.md`.
+There is no build, lint, or test step. The repository is markdown, one
+`CODEOWNERS` file, one `FUNDING.yml`, and the two issue forms under
+`.github/ISSUE_TEMPLATE/`. Changes are reviewed by opening a PR against `main`
+per `.github/CONTRIBUTING.md`.
+
+The issue forms are the one part with a schema worth checking before you push.
+Validate them against the [GitHub issue-forms schema](https://www.schemastore.org/github-issue-forms.json)
+rather than guessing at the syntax. Nothing in this repository runs that check
+for you, and the forms only render on the default branch, so the first real
+confirmation is opening a new issue after merge.
 
 ## Files that reference each other
 
 Several files cross-reference one another by content, not by any tooling —
 keep them consistent by hand when editing:
 
-- `.github/CONTRIBUTING.md` links to `CLA/CLA.md` by URL and quotes the exact
-  CLA sign-off sentence (`"I have read the CLA Document and I hereby sign the
-  CLA"`) — it must match verbatim in both files.
-- `.github/CONTRIBUTING.md` describes the AI-disclosure trailer convention
-  (`Assisted-by: <agent-name>/<model-id>`) that `CLA/CLA.md` §5 also assumes.
+- OAF's five public services are listed in **four** places: the "Our services"
+  table in `profile/README.md`, the "Support our work" paragraph in that same
+  file, and the "Which service is this about?" dropdown in each of
+  `.github/ISSUE_TEMPLATE/bug_report.yml` and
+  `.github/ISSUE_TEMPLATE/feature_request.yml`. Adding, renaming, or retiring a
+  service means editing all four. Nothing checks this for you.
 - `.github/CODEOWNERS` names a team (`@openaustralia/staff`) that must
   actually have write access to repos inheriting this file — a team with no
   access is silently ignored by GitHub rather than erroring (see commit
   `b09ffcd`, which fixed exactly this).
-- `profile/README.md`'s service table and `.github/CONTRIBUTING.md`'s intro
-  both list OAF's public services; keep new services in sync across both if
-  either changes.
+- The `type:` key in each issue form (`Bug`, `Feature`) names an issue type
+  that must be enabled on the `openaustralia` org. Check the org's issue types
+  before changing either value, and confirm the result on a real issue.
 
 ## Conventions specific to this org
 
 - Non-partisan: nothing in these files should imply endorsement or criticism
   of any party, candidate, or position.
 - Australian English throughout.
-- The CLA and CONTRIBUTING.md are still marked as evolving (see the "Open
-  questions" section at the end of CONTRIBUTING.md) — don't present unsettled
-  points as decided.
+- Disclose AI involvement on a contribution using the trailer documented in
+  `.github/CONTRIBUTING.md`: `Assisted-by: <agent-name>:<model-id>`. Report the
+  model actually used, not a remembered default.
+- `.github/CONTRIBUTING.md` is still marked as evolving (see the "Open
+  questions" section at the end of it) — don't present unsettled points as
+  decided. Whether OAF reinstates a contributor licence agreement is one of
+  those open questions.

@@ -16,13 +16,13 @@ template can be missing from a project's own repository and still apply to it.
 | [`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md) | Default contributing guide: branching, pull requests, commit sign-off, AI-assisted contributions |
 | [`.github/CODEOWNERS`](.github/CODEOWNERS) | Default reviewers for repositories without their own `CODEOWNERS` |
 | [`.github/FUNDING.yml`](.github/FUNDING.yml) | Powers the "Sponsor" button across the org's repositories |
-| [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE) | Default bug report and feature request templates |
+| [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE) | Default bug report and feature request forms |
 | [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md) | Default pull request template |
-| [`CLA/CLA.md`](CLA/CLA.md) | Contributor Licence Agreement referenced from `CONTRIBUTING.md` |
 | [`profile/README.md`](profile/README.md) | The org profile page shown at [github.com/openaustralia](https://github.com/openaustralia) — not this file |
 
 A repository can override any of these by adding its own copy of the same
-file. Right to Know's Alaveteli-derived workflow is one example that does.
+file. [Right to Know](https://github.com/openaustralia/righttoknow) does this
+for `CODEOWNERS`.
 
 ## Contributing
 
