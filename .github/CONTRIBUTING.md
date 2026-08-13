@@ -84,32 +84,29 @@ git commit -s -m "Your commit message"
 By signing off, you certify that you wrote the change or otherwise have the
 right to submit it under our licence.
 
-## Contributor Licence Agreement
-
-Before your first contribution is merged, we ask you to agree to our
-[Contributor Licence Agreement](https://github.com/openaustralia/.github/blob/main/CLA/CLA.md)
-(CLA). You do this by commenting on your pull request with:
-
-> **I have read the CLA Document and I hereby sign the CLA**
-
-The CLA confirms you have the right to contribute your work and that you are
-licensing it to us so we can keep distributing our software under an open
-licence. This reflects our charitable object of providing content and software
-under an open licence wherever practicable.
-
 ## Other contributors
 
-As well as the sign off by the primary author/s at the bottom of the commit, 
-list any other contributors using "Co-authored-by: Contributor Name <email@example.com>"_ immediately following the sign off line/s.
+As well as the sign off by the primary author/s at the bottom of the commit,
+list any other contributors using "Co-authored-by: Contributor Name
+<email@example.com>" immediately following the sign off line/s.
+
 ## AI-assisted contributions
 
 We welcome contributions that use AI tools, provided you take responsibility
 for what you submit. If you use an AI tool to generate a meaningful part of a
 contribution:
 
-- **Disclose it.** Add a short note in your pull request description, for
-  example: _"Assisted-by: <agent-name>/<model-id>"_ Minor use, such as autocomplete or grammar checking, does not
-  need disclosing.
+- **Disclose it,** in two places: an `Assisted-by` trailer on each commit the
+  tool helped produce, and a short note in the pull request description. Both
+  name the tool and the specific model, in the same form:
+
+  ```
+  Assisted-by: Claude Code:claude-opus-5
+  ```
+
+  The commit trailer belongs in the trailer block at the end of the message,
+  alongside `Signed-off-by`. Report the model you actually used. Minor use,
+  such as autocomplete or grammar checking, does not need disclosing.
 - **Review it.** You are responsible for reviewing all AI-generated material
   before submitting, to the same standard as any other contribution. Be
   prepared to explain and support the change.
@@ -117,11 +114,8 @@ contribution:
   from an identifiable source, note the reference and its licence so reviewers
   can check for licence compatibility and any gotchas.
 
-A human, not an AI agent, must sign off the commit and agree to the CLA, as
-these are commitments only a person can make.
-
-See the [CLA](https://github.com/openaustralia/.github/blob/main/CLA/CLA.md)
-for the full terms covering AI-assisted contributions.
+A human, not an AI agent, must sign off the commit, as this is a commitment
+only a person can make.
 
 ## Reviews
 
@@ -141,6 +135,8 @@ the team decides:
   to the DCO sign-off.
 - **Staging conventions:** whether to define a single org-wide approach to
   staging environments and branches.
+- **Contributor Licence Agreement:** we removed the CLA requirement for now.
+  Whether to reinstate one, and in what form, is still open.
 
 ---
 
