@@ -1,0 +1,44 @@
+name: Feature request
+description: Suggest an idea for this project
+title: "Feature: "
+type: Feature
+body:
+  - type: dropdown
+    id: service
+    attributes:
+      label: Which service is this about?
+      options:
+        - Planning Alerts
+        - Right to Know
+        - They Vote for You
+        - OpenAustralia.org.au
+        - morph.io
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+      description: 'A clear and concise description of what''s frustrating or missing. Example: "I''m always frustrated when [...]"'
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: What would you like to happen?
+      description: A clear and concise description of what you want.
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you've considered
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Anything else?
+    validations:
+      required: false
