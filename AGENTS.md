@@ -52,6 +52,15 @@ Keep them consistent by hand when editing:
   an `Assisted-by: <agent-name>:<model-id>` trailer on each commit, and a note
   in the pull request description. Report the model actually used, not a
   remembered default.
+- When leaving a PR review comment, give the actual replacement code instead
+  of describing the change, but only when a) there are no remaining decisions
+  to make, b) it replaces just one section of code, and c) it is not
+  significantly longer than describing the change would be. The comment then
+  reduces to the code plus a short line on the reason for the change. If any
+  condition fails, describe the change in prose as usual.
+- Cite sources where you can. If you adapt code or an approach from an
+  identifiable source, note the reference and its licence in the commit or PR
+  description so reviewers can check for licence compatibility and gotchas.
 - `.github/CONTRIBUTING.md` is still marked as evolving (see the "Open
   questions" section at the end of it), so don't present unsettled points as
   decided. Whether OAF reinstates a contributor licence agreement is one of
