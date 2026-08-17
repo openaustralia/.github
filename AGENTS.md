@@ -80,7 +80,11 @@ This section is org-wide guidance, not specific to this repository. Other
 repositories' `AGENTS.md` files should reference it rather than copy it,
 because copies drift. Fetch the current version with:
 
-`gh api repos/openaustralia/.github/contents/AGENTS.md -H "Accept: application/vnd.github.raw"`
+`curl -fsSL https://raw.githubusercontent.com/openaustralia/.github/main/AGENTS.md`
+
+Any equivalent fetch works: a web fetch of that URL, `gh api` if the
+GitHub CLI is installed, or a local clone of this repository beside the
+one being worked on. Don't assume any particular tool is present.
 
 - Keep the future effect of any standing approval ("yes to all following",
   "don't ask again") clearly scoped. Read-only tool calls (Read, grep,
