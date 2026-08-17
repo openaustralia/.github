@@ -1,7 +1,10 @@
 # AGENTS.md
 
 This file provides guidance to AI coding agents (Claude Code, GitHub Copilot,
-and others) when working with code in this repository.
+and others) when working with code in this repository. `CLAUDE.md` and
+`.github/copilot-instructions.md` point here so the guidance lives in one
+place. The final section, "Working as an agent in any OAF repository", is
+org-wide guidance that other repositories' `AGENTS.md` files reference.
 
 ## What this repository is
 
@@ -52,6 +55,11 @@ Keep them consistent by hand when editing:
   an `Assisted-by: <agent-name>:<model-id>` trailer on each commit, and a note
   in the pull request description. Report the model actually used, not a
   remembered default.
+- Don't hard-wrap prose in pull request descriptions, issue bodies, or review
+  comments. GitHub renders each newline in those fields as a line break, so
+  text wrapped at a column width comes out ragged. Write one paragraph per
+  line and check the rendered result after posting. Hard-wrapping markdown
+  files committed to a repository is a different matter and stays fine.
 - When leaving a PR review comment, give the actual replacement code instead
   of describing the change, but only when a) there are no remaining decisions
   to make, b) it replaces just one section of code, and c) it is not
@@ -65,3 +73,47 @@ Keep them consistent by hand when editing:
   questions" section at the end of it), so don't present unsettled points as
   decided. Whether OAF reinstates a contributor licence agreement is one of
   those open questions.
+
+## Working as an agent in any OAF repository
+
+This section is org-wide guidance, not specific to this repository. Other
+repositories' `AGENTS.md` files should reference it rather than copy it,
+because copies drift. Fetch the current version with:
+
+`gh api repos/openaustralia/.github/contents/AGENTS.md -H "Accept: application/vnd.github.raw"`
+
+- Keep the future effect of any standing approval ("yes to all following",
+  "don't ask again") clearly scoped. Read-only tool calls (Read, grep,
+  `git status`/`diff`/`log`) can be batched freely, and a standing approval
+  for them is safe to extend broadly. File changes (Edit/Write, or Bash like
+  `mv`/`rm`/`sed -i`) are different: state what's about to change and why
+  before making it, one described step or clearly-announced group at a time,
+  so an approval covers something the human has actually seen reasoned about.
+  `git add` isn't covered by this, it's cheap to undo.
+- The same scoping applies to Bash allow-patterns for multi-subcommand CLIs
+  (`gh`, `git`, `aws`, `terraform`): a prefix like `gh pr` covers both
+  read-only `gh pr view` and mutating `gh pr create`/`merge`/`close`. Prefer
+  the pattern scoped to the exact safe subcommand used, not the shared
+  prefix, and don't save a broader pattern to a settings file either.
+- Stage commits rather than making them, unless the human has explicitly
+  asked you to commit: `git add` the files, then write the proposed message
+  (with the `Assisted-by:` trailer) to `.git/GITGUI_MSG` and display it.
+  Check that file first; if it already has content, ask before overwriting.
+  The DCO sign-off in `.github/CONTRIBUTING.md` is a certification only a
+  person can make, so the commit is normally the human's deliberate act.
+  Never add `Signed-off-by` or `Co-authored-by` on an AI agent's behalf, and
+  never strip a human's.
+- PRs an agent creates are opened as drafts and assigned to the human driving
+  the change, not to the agent. Taking a PR out of draft is the human's call.
+- GitHub issues have no draft state. Don't create one directly, draft the
+  title and body for the human to file themselves, unless they've explicitly
+  asked you to create it this time.
+- Never commit real personal details, credentials, or secrets; use fictional
+  placeholders in examples, specs, and seed data (the Australian Privacy
+  Principles apply here as much as anywhere). Never read a file that
+  plausibly holds live credentials into an AI conversation, even to check
+  its structure; if you need one fact from it, `grep` for that specific line
+  rather than printing the whole file.
+- If a repository's `AGENTS.md` doesn't match what you consistently see in
+  its code, flag the mismatch and ask which needs fixing rather than
+  silently trusting either.
