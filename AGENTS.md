@@ -55,11 +55,6 @@ Keep them consistent by hand when editing:
   an `Assisted-by: <agent-name>:<model-id>` trailer on each commit, and a note
   in the pull request description. Report the model actually used, not a
   remembered default.
-- Don't hard-wrap prose in pull request descriptions, issue bodies, or review
-  comments. GitHub renders each newline in those fields as a line break, so
-  text wrapped at a column width comes out ragged. Write one paragraph per
-  line and check the rendered result after posting. Hard-wrapping markdown
-  files committed to a repository is a different matter and stays fine.
 - When leaving a PR review comment, give the actual replacement code instead
   of describing the change, but only when a) there are no remaining decisions
   to make, b) it replaces just one section of code, and c) it is not
@@ -107,6 +102,14 @@ one being worked on. Don't assume any particular tool is present.
   person can make, so the commit is normally the human's deliberate act.
   Never add `Signed-off-by` or `Co-authored-by` on an AI agent's behalf, and
   never strip a human's.
+- Don't hard-wrap prose in pull request descriptions, issue bodies, issue
+  comments, or review comments, in any OAF repository. GitHub renders each
+  newline in those fields as a line break, so text wrapped at a column width
+  comes out ragged. Write one paragraph per line, however long that line
+  gets, and check the rendered result after posting. This applies to bodies
+  passed via `--body`, `--body-file`, or a heredoc just as much as to text
+  typed into the web UI. Hard-wrapping markdown files committed to a
+  repository is a different matter and stays fine.
 - PRs an agent creates are opened as drafts and assigned to the human driving
   the change, not to the agent. Taking a PR out of draft is the human's call.
 - GitHub issues have no draft state. Don't create one directly, draft the
