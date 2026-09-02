@@ -16,8 +16,8 @@
 <!--- Include details of your testing environment -->
 <!--- Detail the tests you ran to see how your change affects other areas of the code, etc. -->
 - [ ] Ran automated tests on my own system
-- [ ] Confirmed it passed the GitHub actions tests
 - [ ] Ran `/code-review` (or equivalent): fixed any concerns (and rechecked), linked follow-up issues below, or noted why they are not important below
+- [ ] GitHub Actions tests: likewise fixed so they pass or linked a follow-up issue / replied why not important directly on each comment (reviewer will mark resolved as part of review)
 
 ## Screenshots (if appropriate):
 
