@@ -124,3 +124,6 @@ one being worked on. Don't assume any particular tool is present.
 - If a repository's `AGENTS.md` doesn't match what you consistently see in
   its code, flag the mismatch and ask which needs fixing rather than
   silently trusting either.
+- Make each commit a single, logical change. Don't bundle a feature
+  addition, a typo fix, and a dependency update into one commit just because
+  they came from the same session or review pass.
