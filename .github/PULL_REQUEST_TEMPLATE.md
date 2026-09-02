@@ -17,7 +17,7 @@
 <!--- Detail the tests you ran to see how your change affects other areas of the code, etc. -->
 - [ ] Ran automated tests on my own system
 - [ ] Confirmed it passed the GitHub actions tests
-- [ ] Ran /code-review Claude skill and either fixed, created an issue for follow up or quickly explained why concerns raised are not relevant
+- [ ] Ran `/code-review` (or equivalent): fixed any concerns (and rechecked), linked follow-up issues below, or noted why they are not important below
 
 ## Screenshots (if appropriate):
 
