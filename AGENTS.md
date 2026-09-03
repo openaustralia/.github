@@ -128,6 +128,12 @@ rather than guessing at the syntax. Nothing in this repository runs that check
 for you, and the forms only render on the default branch, so the first real
 confirmation is opening a new issue after merge.
 
+Nothing machine-readable reads the forms' field IDs. No workflow, action, bot
+or parser in either org depends on `service`, `what-happened`, `steps` or any
+of the others, so a field can be renamed or removed without breaking
+automation. Confirmed in September 2026 by a full workflow inventory and an
+org-wide code search, which is expensive enough to be worth not repeating.
+
 ## Files that reference each other
 
 Several files cross-reference one another by content, not by any tooling.
@@ -138,7 +144,8 @@ Keep them consistent by hand when editing:
   file, and the "Which service is this about?" dropdown in each of
   `.github/ISSUE_TEMPLATE/bug_report.yml` and
   `.github/ISSUE_TEMPLATE/feature_request.yml`. Adding, renaming, or retiring a
-  service means editing all four. Nothing checks this for you.
+  service means editing all four. Nothing checks this for you. Both dropdowns
+  are multi-select and optional, so a filer can name several services or none.
 - `.github/CODEOWNERS` names a team (`@openaustralia/staff`) that must
   actually have write access to repos inheriting this file. A team with no
   access is silently ignored by GitHub rather than erroring (see commit
@@ -146,6 +153,19 @@ Keep them consistent by hand when editing:
 - The `type:` key in each issue form (`Bug`, `Feature`) names an issue type
   that must be enabled on the `openaustralia` org. Check the org's issue types
   before changing either value, and confirm the result on a real issue.
+- The `needs-triage` label named in each issue form has to already exist in a
+  repository inheriting these forms, or GitHub silently drops it rather than
+  erroring. The repositories with issues enabled are `infrastructure`,
+  `righttoknow`, `openaustralia`, `oaf-internal`, `theyvoteforyou`,
+  `planningalerts`, `morph`, `morph-cli`, `oaf-standard-footer` and
+  `cuttlefish`. `docs-internal` provides its own forms, so it doesn't inherit
+  these ones.
+- `planningalerts-scrapers/.github` copies `.github/ISSUE_TEMPLATE/` from here
+  with a workflow, so the `needs-triage` line travels with it. That label
+  deliberately doesn't exist in `planningalerts-scrapers`, whose `issues`
+  tracker has its own taxonomy and whose labelling workflows treat a removed
+  label as a permanent veto. Leave the silent no-op alone rather than
+  "fixing" it by creating the label there.
 - The `Assisted-by:` example appears in three places:
   `.github/CONTRIBUTING.md`, the "How OAF writes" subsection here, and the
   comment at the end of `.github/PULL_REQUEST_TEMPLATE.md`. Changing the
