@@ -60,8 +60,11 @@ change.
 
 ## Pull requests
 
-- Fill in the pull request template. Describe what you changed, why, and how you
-  tested it.
+- Fill in the pull request template: what you changed and why in two or three
+  sentences or dot points, and a sentence or two on how you tested it. Delete
+  a section that doesn't apply rather than filling it with "N/A".
+- Keep the description to what a reviewer needs. The diff shows what changed,
+  so use the description for what it can't show.
 - Keep changes focused and reviewable.
 - Link to any related issue.
 - Take the pull request out of draft only once the checks pass.
