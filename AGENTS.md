@@ -1,60 +1,22 @@
 # AGENTS.md
 
 This file provides guidance to AI coding agents (Claude Code, GitHub Copilot,
-and others) when working with code in this repository. `CLAUDE.md` and
-`.github/copilot-instructions.md` point here so the guidance lives in one
-place. The final section, "Working as an agent in any OAF repository", is
-org-wide guidance that other repositories' `AGENTS.md` files reference.
+and others). `CLAUDE.md` and `.github/copilot-instructions.md` point here so
+the guidance lives in one place.
 
-## What this repository is
+The first section, "Working as an agent in any OAF repository", is org-wide.
+Other repositories' `AGENTS.md` files should reference it rather than copy it,
+because copies drift. Fetch the current version with:
 
-`openaustralia/.github` is a [GitHub special repository](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file):
-files under `.github/` here are inherited by every repository in the
-`openaustralia` org that doesn't provide its own copy. `profile/README.md` is
-unrelated to that mechanism. It's the org's [profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#adding-a-public-profile-readme-for-your-organization),
-shown at github.com/openaustralia. Don't confuse it with the root `README.md`,
-which documents this repository itself.
+`curl -fsSL https://raw.githubusercontent.com/openaustralia/.github/main/AGENTS.md`
 
-There is no build, lint, or test step. The repository is markdown, one
-`CODEOWNERS` file, one `FUNDING.yml`, and the two issue forms under
-`.github/ISSUE_TEMPLATE/`. Changes are reviewed by opening a PR against `main`
-per `.github/CONTRIBUTING.md`.
+Any equivalent fetch works: a web fetch of that URL, `gh api` if the GitHub
+CLI is installed, or a local clone of this repository beside the one being
+worked on. Don't assume any particular tool is present.
 
-The issue forms are the one part with a schema worth checking before you push.
-Validate them against the [GitHub issue-forms schema](https://www.schemastore.org/github-issue-forms.json)
-rather than guessing at the syntax. Nothing in this repository runs that check
-for you, and the forms only render on the default branch, so the first real
-confirmation is opening a new issue after merge.
+## Working as an agent in any OAF repository
 
-## Files that reference each other
-
-Several files cross-reference one another by content, not by any tooling.
-Keep them consistent by hand when editing:
-
-- OAF's five public services are listed in **four** places: the "Our services"
-  table in `profile/README.md`, the "Support our work" paragraph in that same
-  file, and the "Which service is this about?" dropdown in each of
-  `.github/ISSUE_TEMPLATE/bug_report.yml` and
-  `.github/ISSUE_TEMPLATE/feature_request.yml`. Adding, renaming, or retiring a
-  service means editing all four. Nothing checks this for you.
-- `.github/CODEOWNERS` names a team (`@openaustralia/staff`) that must
-  actually have write access to repos inheriting this file. A team with no
-  access is silently ignored by GitHub rather than erroring (see commit
-  `b09ffcd`, which fixed exactly this).
-- The `type:` key in each issue form (`Bug`, `Feature`) names an issue type
-  that must be enabled on the `openaustralia` org. Check the org's issue types
-  before changing either value, and confirm the result on a real issue.
-- The `Assisted-by:` example appears in three places:
-  `.github/CONTRIBUTING.md`, the "Conventions specific to this org" section
-  here, and the comment at the end of `.github/PULL_REQUEST_TEMPLATE.md`.
-  Changing the separator or the model-id form means editing all three.
-- The pull request description rule is stated in three places: the "Working as
-  an agent in any OAF repository" section here, the "Pull requests" list in
-  `.github/CONTRIBUTING.md`, and the comments in
-  `.github/PULL_REQUEST_TEMPLATE.md`. Changing the expected length means
-  editing all three.
-
-## Conventions specific to this org
+### How OAF writes
 
 - Non-partisan: nothing in these files should imply endorsement or criticism
   of any party, candidate, or position.
@@ -78,17 +40,7 @@ Keep them consistent by hand when editing:
   decided. Whether OAF reinstates a contributor licence agreement is one of
   those open questions.
 
-## Working as an agent in any OAF repository
-
-This section is org-wide guidance, not specific to this repository. Other
-repositories' `AGENTS.md` files should reference it rather than copy it,
-because copies drift. Fetch the current version with:
-
-`curl -fsSL https://raw.githubusercontent.com/openaustralia/.github/main/AGENTS.md`
-
-Any equivalent fetch works: a web fetch of that URL, `gh api` if the
-GitHub CLI is installed, or a local clone of this repository beside the
-one being worked on. Don't assume any particular tool is present.
+### How to operate
 
 - Fetch before you plan, and again before rewriting a file wholesale. A local
   clone can be many commits behind `origin/main`, and a change designed
@@ -151,3 +103,59 @@ one being worked on. Don't assume any particular tool is present.
 - Make each commit a single, logical change. Don't bundle a feature
   addition, a typo fix, and a dependency update into one commit just because
   they came from the same session or review pass.
+
+## About the openaustralia/.github repository
+
+Everything above is org-wide. This section and the next are about this
+repository itself, so a reader who fetched this file from another
+repository can stop here.
+
+`openaustralia/.github` is a [GitHub special repository](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file):
+files under `.github/` here are inherited by every repository in the
+`openaustralia` org that doesn't provide its own copy. `profile/README.md` is
+unrelated to that mechanism. It's the org's [profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#adding-a-public-profile-readme-for-your-organization),
+shown at github.com/openaustralia. Don't confuse it with the root `README.md`,
+which documents this repository itself.
+
+There is no build, lint, or test step. The repository is markdown, one
+`CODEOWNERS` file, one `FUNDING.yml`, and the two issue forms under
+`.github/ISSUE_TEMPLATE/`. Changes are reviewed by opening a PR against `main`
+per `.github/CONTRIBUTING.md`.
+
+The issue forms are the one part with a schema worth checking before you push.
+Validate them against the [GitHub issue-forms schema](https://www.schemastore.org/github-issue-forms.json)
+rather than guessing at the syntax. Nothing in this repository runs that check
+for you, and the forms only render on the default branch, so the first real
+confirmation is opening a new issue after merge.
+
+## Files that reference each other
+
+Several files cross-reference one another by content, not by any tooling.
+Keep them consistent by hand when editing:
+
+- OAF's five public services are listed in **four** places: the "Our services"
+  table in `profile/README.md`, the "Support our work" paragraph in that same
+  file, and the "Which service is this about?" dropdown in each of
+  `.github/ISSUE_TEMPLATE/bug_report.yml` and
+  `.github/ISSUE_TEMPLATE/feature_request.yml`. Adding, renaming, or retiring a
+  service means editing all four. Nothing checks this for you.
+- `.github/CODEOWNERS` names a team (`@openaustralia/staff`) that must
+  actually have write access to repos inheriting this file. A team with no
+  access is silently ignored by GitHub rather than erroring (see commit
+  `b09ffcd`, which fixed exactly this).
+- The `type:` key in each issue form (`Bug`, `Feature`) names an issue type
+  that must be enabled on the `openaustralia` org. Check the org's issue types
+  before changing either value, and confirm the result on a real issue.
+- The `Assisted-by:` example appears in three places:
+  `.github/CONTRIBUTING.md`, the "How OAF writes" subsection here, and the
+  comment at the end of `.github/PULL_REQUEST_TEMPLATE.md`. Changing the
+  separator or the model-id form means editing all three.
+- The pull request description rule is stated in three places: the "How to
+  operate" subsection here, the "Pull requests" list in
+  `.github/CONTRIBUTING.md`, and the comments in
+  `.github/PULL_REQUEST_TEMPLATE.md`. Changing the expected length means
+  editing all three.
+- `openaustralia/morph`'s `AGENTS.md` quotes the "Working as an agent in any
+  OAF repository" heading and summarises what both of its subsections cover.
+  Renaming the heading or moving a rule between subsections means editing
+  that file too.
