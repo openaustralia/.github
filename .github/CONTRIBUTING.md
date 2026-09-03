@@ -122,6 +122,28 @@ contribution:
 A human, not an AI agent, must sign off the commit, as this is a commitment
 only a person can make.
 
+### Review your own code before creating a PR
+
+First, run an AI code review (for example Claude Code's `/code-review`
+skill, or an equivalent tool). Work through what it raises like any other review feedback:
+fix it and recheck,
+link a follow-up issue if it is a pre-existing problem best left for later, or
+explain briefly why a concern raised is not important.
+See the pull request template's testing checklist for where to record this.
+
+This lets humans reviewing PRs spend their time on understanding and judgement,
+not on re-finding issues the author's own AI review would already catch, or
+on gatekeeping. If a reviewer judges this step is needed but was skipped,
+they can return the pull request for a combined AI and human review.
+
+Useful context added to the pull request description can also help GitHub
+Actions' own automated checks avoid false positives. Patterns worth
+remembering are candidates for folding back into `AGENTS.md` later.
+
+Then create the draft pull request, handle any concerns GitHub Actions
+raises in the same way, and finally click the `Ready for review` button.
+Leave it to the human reviewer to read your responses and mark concerns as resolved.
+
 ## Reviews
 
 Reviews help us share knowledge and keep `main` healthy. Repositories use a
