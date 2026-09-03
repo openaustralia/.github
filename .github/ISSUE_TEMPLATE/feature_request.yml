@@ -2,11 +2,14 @@ name: Feature request
 description: Suggest an idea for this project
 title: "Feature: "
 type: Feature
+labels: needs-triage
 body:
   - type: dropdown
     id: service
     attributes:
       label: Which service is this about?
+      description: Select more than one if the idea crosses services. Skip it if the repository already says.
+      multiple: true
       options:
         - Planning Alerts
         - Right to Know
@@ -15,7 +18,7 @@ body:
         - morph.io
         - Something else
     validations:
-      required: true
+      required: false
   - type: textarea
     id: problem
     attributes:
@@ -28,12 +31,6 @@ body:
     attributes:
       label: What would you like to happen?
       description: A clear and concise description of what you want.
-    validations:
-      required: false
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatives you've considered
     validations:
       required: false
   - type: textarea
