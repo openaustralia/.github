@@ -44,6 +44,15 @@ Keep them consistent by hand when editing:
 - The `type:` key in each issue form (`Bug`, `Feature`) names an issue type
   that must be enabled on the `openaustralia` org. Check the org's issue types
   before changing either value, and confirm the result on a real issue.
+- The `Assisted-by:` example appears in three places:
+  `.github/CONTRIBUTING.md`, the "Conventions specific to this org" section
+  here, and the comment at the end of `.github/PULL_REQUEST_TEMPLATE.md`.
+  Changing the separator or the model-id form means editing all three.
+- The pull request description rule is stated in three places: the "Working as
+  an agent in any OAF repository" section here, the "Pull requests" list in
+  `.github/CONTRIBUTING.md`, and the comments in
+  `.github/PULL_REQUEST_TEMPLATE.md`. Changing the expected length means
+  editing all three.
 
 ## Conventions specific to this org
 
@@ -116,6 +125,15 @@ one being worked on. Don't assume any particular tool is present.
   passed via `--body`, `--body-file`, or a heredoc just as much as to text
   typed into the web UI. Hard-wrapping markdown files committed to a
   repository is a different matter and stays fine.
+- Keep a pull request description to what a reviewer needs: two or three
+  sentences on what changed and why, or the same in dot points, plus a
+  sentence or two on how you checked it. The diff already shows what changed
+  line by line, so spend the description on what it can't, the reason, the
+  constraint, the thing you verified. Describe the change's final state, not
+  the path taken to reach it. Drafts you revised, options you rejected, and
+  audits of your own earlier work belong in a review comment, where a reviewer
+  can reply to them. Delete a template section that doesn't apply rather than
+  filling it with "N/A".
 - PRs an agent creates are opened as drafts and assigned to the human driving
   the change, not to the agent. Taking a PR out of draft is the human's call.
 - GitHub issues have no draft state. Don't create one directly, draft the

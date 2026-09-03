@@ -1,38 +1,35 @@
-<!--- Provide a general summary of your changes in the Title above -->
+<!--- The PR title is a separate field, not part of this body. Make it one
+line on what the change does. -->
 
-## Description
+## What and why
 
-<!--- Describe your changes in detail -->
+<!--- Two or three sentences, or the same in dot points: what changed, and the
+reason for it. The diff already shows what changed line by line, so spend them
+on what it can't show. Link the issue this closes. -->
 
-## Motivation and Context
+## Type of change
 
-<!--- Why is this change required? What problem does it solve? -->
-<!--- If it fixes an open issue, please link to the issue here. -->
-
-## How Has This Been Tested?
-
-<!--- Please describe in detail how you tested your changes. -->
-- [ ] Checked affected area manually on my own / staging system
-<!--- Include details of your testing environment -->
-<!--- Detail the tests you ran to see how your change affects other areas of the code, etc. -->
-- [ ] Ran automated tests on my own system
-- [ ] Ran `/code-review` (or equivalent): fixed any concerns (and rechecked), linked follow-up issues below, or noted why they are not important below
-- [ ] GitHub Actions tests: likewise fixed so they pass or linked a follow-up issue / replied why not important directly on each comment (reviewer will mark resolved as part of review)
-
-## Screenshots (if appropriate):
-
-## Types of Changes
-
-<!--- What types of changes does your code introduce? Put an `x` in all the boxes that apply: -->
-- [ ] Bug fix (non-breaking change that fixes an issue)
-- [ ] New feature (non-breaking change that adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to change)
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Breaking change
 - [ ] Documentation
 
-## Checklist:
+## How this was checked
 
-<!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
-<!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
-- [ ] My code follows the code style of this project.
-- [ ] My change requires a change to the documentation.
-- [ ] I have updated the documentation accordingly.
+<!--- A sentence or two on what you actually did. Attach a screenshot if the
+change is visual. Follow-up issues and anything you decided wasn't important
+go under the boxes. -->
+
+- [ ] Checked the affected area on my own or a staging system
+- [ ] Ran the automated tests
+- [ ] Ran `/code-review` (or equivalent): fixed any concerns (and rechecked), linked follow-up issues below, or noted why they are not important below
+- [ ] GitHub Actions tests: likewise fixed so they pass or linked a follow-up issue / replied why not important directly on each comment (reviewer will mark resolved as part of review)
+- [ ] Documentation updated, or not needed
+
+<!--- Delete a section that doesn't apply rather than writing "N/A".
+
+If an AI tool helped write this change, add one line here naming the tool and
+the model actually used, in the same form as the commit trailer:
+
+Assisted-by: Claude Code:claude-opus-5
+-->
