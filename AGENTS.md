@@ -81,6 +81,12 @@ Any equivalent fetch works: a web fetch of that URL, `gh api` if the
 GitHub CLI is installed, or a local clone of this repository beside the
 one being worked on. Don't assume any particular tool is present.
 
+- Fetch before you plan, and again before rewriting a file wholesale. A local
+  clone can be many commits behind `origin/main`, and a change designed
+  against a stale file quietly reverts whatever landed in between. Compare
+  against the remote rather than the working copy: `git fetch` then
+  `git log --oneline main..origin/main`, or read the file from the remote if
+  the clone can't be fetched.
 - Keep the future effect of any standing approval ("yes to all following",
   "don't ask again") clearly scoped. Read-only tool calls (Read, grep,
   `git status`/`diff`/`log`) can be batched freely, and a standing approval
