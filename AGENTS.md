@@ -23,10 +23,17 @@ worked on. Don't assume any particular tool is present.
 - Australian English throughout.
 - No em dashes. Use a hyphen, a comma, or a full stop.
 - Active not passive voice.
-- Keep the subject in each sentence / paragraph.
+- Give each sentence a clear subject, especially where a paragraph has
+  more than one candidate for it.
 - State a choice's benefit directly rather than justifying by saying the
   alternative was worse.
-- Use clear and quick to understand language as outlined in [Style Manual's plain language guidance](https://www.stylemanual.gov.au/writing-and-designing-content/clear-language-and-writing-style/plain-language-and-word-choice)
+- Plain words over jargon. Use a technical term or acronym only when
+  accuracy and clarity need it, and link its first use to an
+  authoritative reference - from our repos where one exists, or a
+  reputable general source otherwise.
+- Be concise: include only the words and information people need. Code
+  and its comments already explain what and why - link to them, with enough
+  context for the reader to decide whether to follow it.
 - Disclose AI involvement in both places `.github/CONTRIBUTING.md` asks for:
   an `Assisted-by: <agent-name>:<model-id>` trailer on each commit, and a note
   in the pull request description. Report the model actually used, not a
