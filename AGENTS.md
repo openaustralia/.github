@@ -103,6 +103,8 @@ worked on. Don't assume any particular tool is present.
 - Make each commit a single, logical change. Don't bundle a feature
   addition, a typo fix, and a dependency update into one commit just because
   they came from the same session or review pass.
+- Hyperlink a reference to a specific code or document section, where
+  possible, instead of only naming it in prose.
 
 ## About the openaustralia/.github repository
 
