@@ -66,7 +66,9 @@ change.
 - Keep the description to what a reviewer needs. The diff shows what changed,
   so use the description for what it can't show.
 - Keep changes focused and reviewable.
-- Link to any related issue.
+- Link to any related issue or pull request, preferably in a bullet point.
+  Otherwise repeat the link in a bullet point after the paragraph
+  so GitHub shows the title and status.
 - Take the pull request out of draft only once the checks pass.
 
 ## Commits and sign-off
