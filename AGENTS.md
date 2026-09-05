@@ -69,14 +69,12 @@ worked on. Don't assume any particular tool is present.
   person can make, so the commit is normally the human's deliberate act.
   Never add `Signed-off-by` or `Co-authored-by` on an AI agent's behalf, and
   never strip a human's.
-- Don't hard-wrap prose in pull request descriptions, issue bodies, issue
-  comments, or review comments, in any OAF repository. GitHub renders each
-  newline in those fields as a line break, so text wrapped at a column width
-  comes out ragged. Write one paragraph per line, however long that line
-  gets, and check the rendered result after posting. This applies to bodies
-  passed via `--body`, `--body-file`, or a heredoc just as much as to text
-  typed into the web UI. Hard-wrapping markdown files committed to a
-  repository is a different matter and stays fine.
+- Don't hard-wrap sentences in prose in pull request descriptions, issue bodies, issue comments, or review comments, in any OAF repository.
+  GitHub renders each newline in those fields as a line break, so text wrapped at a column width comes out ragged.
+  Write one sentence per line instead, however long that line gets, and check the rendered result after posting.
+  This gives each sentence equal emphasis by starting at the left margin, and balances GitHub's hard-wrap behaviour against long lines being awkward in some text editors.
+  This applies to bodies passed via `--body`, `--body-file`, or a heredoc just as much as to text typed into the web UI.
+  Hard-wrapping markdown files committed to a repository is a different matter and stays fine.
 - Keep a pull request description to what a reviewer needs: two or three
   sentences on what changed and why, or the same in dot points, plus a
   sentence or two on how you checked it. The diff already shows what changed
