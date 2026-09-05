@@ -22,6 +22,11 @@ worked on. Don't assume any particular tool is present.
   of any party, candidate, or position.
 - Australian English throughout.
 - No em dashes. Use a hyphen, a comma, or a full stop.
+- Active not passive voice.
+- Keep the subject in each sentence / paragraph.
+- State a choice's benefit directly rather than justifying by saying the
+  alternative was worse.
+- Use clear and quick to understand language as outlined in [Style Manual's plain language guidance](https://www.stylemanual.gov.au/writing-and-designing-content/clear-language-and-writing-style/plain-language-and-word-choice)
 - Disclose AI involvement in both places `.github/CONTRIBUTING.md` asks for:
   an `Assisted-by: <agent-name>:<model-id>` trailer on each commit, and a note
   in the pull request description. Report the model actually used, not a
