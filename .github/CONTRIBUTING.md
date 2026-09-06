@@ -65,10 +65,13 @@ change.
   a section that doesn't apply rather than filling it with "N/A".
 - Keep the description to what a reviewer needs. The diff shows what changed,
   so use the description for what it can't show.
+- If needed, concisely answer expected questions on what was left as is or deferred
 - Keep changes focused and reviewable.
 - Link to any related issue or pull request, preferably in a bullet point.
   Otherwise repeat the link in a bullet point after the paragraph
   so GitHub shows the title and status.
+- Tick every "Type of change" box that applies, not just one, for example a
+  hotfix is both "Bug fix" and "Already deployed".
 - Take the pull request out of draft only once the checks pass.
 
 ## Commits and sign-off

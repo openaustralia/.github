@@ -11,8 +11,11 @@ on what it can't show. Link the issue this closes in a bullet point. -->
 
 ## Type of change
 
+<!-- tick all that apply -->
 - [ ] Bug fix
 - [ ] New feature
+- [ ] Chore
+- [ ] Already deployed
 - [ ] Breaking change
 - [ ] Documentation
 
