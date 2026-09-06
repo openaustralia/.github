@@ -6,7 +6,7 @@ the guidance lives in one place.
 
 The first section, "Working as an agent in any OAF repository", is org-wide.
 Other repositories' `AGENTS.md` files should reference it rather than copy it,
-because copies drift. Fetch the current version with:
+because copies drift. Fetch the current version immediately with:
 
 `curl -fsSL https://raw.githubusercontent.com/openaustralia/.github/main/AGENTS.md`
 
