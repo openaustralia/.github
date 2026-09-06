@@ -71,7 +71,7 @@ change.
   Otherwise repeat the link in a bullet point after the paragraph
   so GitHub shows the title and status.
 - Tick every "Type of change" box that applies, not just one, for example a
-  hotfix is both "Bug fix" and "Already deployed".
+  hotfix is both "Bug fix" and "Already deployed". Remove those that don't apply.
 - Take the pull request out of draft only once the checks pass.
 
 ## Commits and sign-off

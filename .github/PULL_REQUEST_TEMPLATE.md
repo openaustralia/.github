@@ -11,7 +11,7 @@ on what it can't show. Link the issue this closes in a bullet point. -->
 
 ## Type of change
 
-<!-- tick all that apply -->
+<!-- tick all that apply, remove those that don't -->
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Chore
