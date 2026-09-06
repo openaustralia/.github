@@ -5,7 +5,7 @@ line on what the change does. -->
 
 <!--- Two or three sentences, or the same in dot points: what changed, and the
 reason for it. The diff already shows what changed line by line, so spend them
-on what it can't show. Link the issue this closes. -->
+on what it can't show. Link the issue this closes in a bullet point. -->
 
 ## Type of change
 
