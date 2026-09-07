@@ -65,10 +65,13 @@ change.
   a section that doesn't apply rather than filling it with "N/A".
 - Keep the description to what a reviewer needs. The diff shows what changed,
   so use the description for what it can't show.
+- If needed, concisely answer expected questions on what was left as is or deferred
 - Keep changes focused and reviewable.
 - Link to any related issue or pull request, preferably in a bullet point.
   Otherwise repeat the link in a bullet point after the paragraph
   so GitHub shows the title and status.
+- Tick every "Type of change" box that applies, not just one, for example a
+  hotfix is both "Bug fix" and "Already deployed". Remove those that don't apply.
 - Take the pull request out of draft only once the checks pass.
 
 ## Commits and sign-off
@@ -121,6 +124,27 @@ contribution:
 
 A human, not an AI agent, must sign off the commit, as this is a commitment
 only a person can make.
+
+### Review your own code before creating a PR
+
+First, run an AI code review (for example Claude Code's `/code-review`
+skill, or an equivalent tool). Work through what it raises like any other
+review feedback:
+
+- fix it and recheck,
+- Otherwise, note it as a bullet point at the end of "What and why", either:
+  - link a follow-up issue if it is a problem best left for later, or
+  - explain briefly why a concern raised is not important.
+
+This lets humans reviewing PRs spend their time on understanding and judgement,
+not on re-finding issues the author's own AI review should already catch, or
+on gatekeeping. If a reviewer judges this step is needed but was skipped,
+they can return the pull request for a combined AI and human review.
+
+Then create the draft pull request, handle any concerns GitHub Actions
+raises in the same way, and finally click the `Ready for review` button.
+Leave it to the human reviewer to read your responses to GitHub Actions and
+mark its concerns as resolved.
 
 ## Reviews
 
