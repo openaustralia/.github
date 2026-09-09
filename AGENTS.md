@@ -73,6 +73,11 @@ worked on. Don't assume any particular tool is present.
   read-only `gh pr view` and mutating `gh pr create`/`merge`/`close`. Prefer
   the pattern scoped to the exact safe subcommand used, not the shared
   prefix, and don't save a broader pattern to a settings file either.
+- When you notice something worth suggesting beyond what was asked, put it
+  as a short bullet list at the start of your reply, clearly separated from
+  the change itself. That lets the reviewer accept it, adjust the request,
+  or defer it, rather than burying it in prose alongside the
+  implementation.
 - Stage commits rather than making them, unless the human has explicitly
   asked you to commit: `git add` the files, then write the proposed message
   (with the `Assisted-by:` trailer) to `.git/GITGUI_MSG` and display it.
