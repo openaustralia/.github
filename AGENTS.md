@@ -115,6 +115,12 @@ worked on. Don't assume any particular tool is present.
   they came from the same session or review pass.
 - Hyperlink a reference to a specific code or document section, where
   possible, instead of only naming it in prose.
+- When adding tests, prefer exercising real internal objects rather than
+  mocking them. For dependencies reached over the network, record and
+  replay real responses (with a language-appropriate library, for example
+  [VCR](https://github.com/vcr/vcr) or
+  [WebMock](https://github.com/bblimke/webmock) in Ruby) rather than
+  fabricating what you expect them to return.
 
 ## About the openaustralia/.github repository
 
