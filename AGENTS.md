@@ -52,6 +52,16 @@ worked on. Don't assume any particular tool is present.
   decided. Whether OAF reinstates a contributor licence agreement is one of
   those open questions.
 
+### How OAF shapes code
+
+- Keep functions short enough to read on one screen without scrolling, and
+  keep each file focused on one clear purpose. As a rough guide that's
+  functions under about 20 lines and files under about 200 lines - a prompt
+  to look again rather than a hard cap, and a test file can reasonably run
+  two or three times the length of the file it tests.
+- When a design decision only affects one file or method, document it with a
+  comment at that point in the code rather than in a separate document.
+
 ### How to operate
 
 - Fetch before you plan, and again before rewriting a file wholesale. A local
@@ -168,6 +178,6 @@ Keep them consistent by hand when editing:
   `.github/PULL_REQUEST_TEMPLATE.md`. Changing the expected length means
   editing all three.
 - `openaustralia/morph`'s `AGENTS.md` quotes the "Working as an agent in any
-  OAF repository" heading and summarises what both of its subsections cover.
-  Renaming the heading or moving a rule between subsections means editing
-  that file too.
+  OAF repository" heading and summarises what its subsections cover. Renaming
+  the heading, adding a subsection, or moving a rule between subsections means
+  editing that file too.
