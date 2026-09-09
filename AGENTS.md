@@ -115,6 +115,15 @@ worked on. Don't assume any particular tool is present.
   they came from the same session or review pass.
 - Hyperlink a reference to a specific code or document section, where
   possible, instead of only naming it in prose.
+- When you make a trade-off that isn't obvious from the code, leave a short
+  comment saying why, so a later reader can revisit it if things change. If
+  the decision spans more than one file, suggest recording it instead as a
+  numbered [Architecture Decision Record](http://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
+  (ADR) under `docs/adr/`, in the format
+  [`infrastructure`](https://github.com/openaustralia/infrastructure/tree/main/docs/adr)
+  and [`theyvoteforyou`](https://github.com/openaustralia/theyvoteforyou/tree/main/docs/adr)
+  already use for theirs, rather than repeating the reasoning in several
+  places. Create the directory if the repository doesn't have one yet.
 
 ## About the openaustralia/.github repository
 
