@@ -1,0 +1,19 @@
+# IDEs and editors
+/.vscode
+/.aider*
+/.idea
+
+# Vim swap/backup files
+*~
+*.swp
+*.swo
+
+# Patch/reject files
+*.patch
+*.rej
+
+# OS cruft
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
