@@ -150,6 +150,9 @@ worked on. Don't assume any particular tool is present.
   and [`theyvoteforyou`](https://github.com/openaustralia/theyvoteforyou/tree/main/docs/adr)
   already use for theirs, rather than repeating the reasoning in several
   places. Create the directory if the repository doesn't have one yet.
+- When reviewing someone else's pull request, prefer leaving a fix
+  as a GitHub suggested change or comment. Only push a commit to
+  a team member's PR when it is small, unambiguous and uncontroversial.
 
 ## About the openaustralia/.github repository
 
