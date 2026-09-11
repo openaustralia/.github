@@ -60,6 +60,11 @@ worked on. Don't assume any particular tool is present.
   against the remote rather than the working copy: `git fetch` then
   `git log --oneline main..origin/main`, or read the file from the remote if
   the clone can't be fetched.
+- Before starting a non-trivial task, or one that differs from what was
+  asked, state the intended approach and get agreement on it before writing
+  any code. This is about the plan itself, not about tool permissions.
+  Claude Code's `/plan` mode implements this directly; other agents should
+  reach the same checkpoint by whatever means they have available.
 - Keep the future effect of any standing approval ("yes to all following",
   "don't ask again") clearly scoped. Read-only tool calls (Read, grep,
   `git status`/`diff`/`log`) can be batched freely, and a standing approval
