@@ -115,6 +115,9 @@ worked on. Don't assume any particular tool is present.
   they came from the same session or review pass.
 - Hyperlink a reference to a specific code or document section, where
   possible, instead of only naming it in prose.
+- When reviewing someone else's pull request, prefer leaving a fix
+  as a GitHub suggested change or comment. Only push a commit to
+  a team member's PR when it is small, unambiguous and uncontroversial.
 
 ## About the openaustralia/.github repository
 
