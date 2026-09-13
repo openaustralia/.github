@@ -17,3 +17,8 @@
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Claude Code's local per-project config, settings and worktrees
+/CLAUDE.local.md
+/.claude/settings.local.json
+/.claude/worktrees/
