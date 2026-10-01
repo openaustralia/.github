@@ -1,19 +1,26 @@
-# Contributing to OpenAustralia Foundation projects
+# Contributing to OpenAustralia Foundation projects on GitHub
 
 Thank you for helping build tools that give people the information and access
 they need to take part in Australian democracy. This guide explains how we
-work with Git and GitHub across our repositories so that contributions are
-consistent, easy to follow, and clearly licensed.
+work with Git and GitHub, so that contributions are consistent, easy to
+follow, and clearly licensed.
 
-This file lives in the [`openaustralia/.github`](https://github.com/openaustralia/.github)
-repository and applies to every OpenAustralia Foundation repository unless a
-repository provides its own `CONTRIBUTING.md` that overrides it. Some projects
-have their own workflow for good reasons (for example, Right to Know), so
-always check for a repository-specific file first.
+It applies to the OAF repositories that stay on GitHub: the Planning Alerts
+scrapers in [`planningalerts-scrapers`](https://github.com/planningalerts-scrapers),
+which [morph.io](https://morph.io) runs from GitHub, other repositories
+morph.io runs, and upstream projects we have forked. A repository can override
+it with its own `CONTRIBUTING.md`, so always check for one first.
 
-> **Status:** This is our shared starting point, agreed by the team in July
-> 2026. A few details are still being finalised and are marked as open
-> questions at the end. Suggestions are welcome via an issue or pull request.
+**Most OAF projects are moving to GitLab.** Once a project has moved, its
+GitHub repository is a read-only copy, and its issues and merge requests live
+on GitLab instead. Contribute there, following the
+[GitLab guide](https://gitlab.com/openaustralia/templates/-/blob/main/CONTRIBUTING.md).
+
+> **Status:** agreed by the team in July 2026. The four questions left open
+> then were settled on 2026-09-30, and this guide reflects them. This file is
+> maintained in [`openaustralia/templates`](https://gitlab.com/openaustralia/templates)
+> on GitLab and copied here. Suggestions are welcome as an issue or merge
+> request there.
 
 ## Our workflow: GitHub Flow
 
@@ -38,8 +45,7 @@ In practice that means:
 
 ### Staging
 
-GitHub Flow does not prescribe how staging works, and our practice varies by
-project. Where staging is used, staging branches (for example `staging` or
+Staging is project-specific. Where it is used, staging branches (for example `staging` or
 `staging1`) are treated as ephemeral: they are created for a specific server or
 group of changes and reset as needed. Follow the conventions in the repository
 you are working in, and prefer aiming pull requests at `main`.
@@ -47,7 +53,8 @@ you are working in, and prefer aiming pull requests at `main`.
 ## Branches
 
 Name branches using the [Conventional Branch](https://conventionalbranch.org/#summary)
-convention, with a type prefix followed by the issue number and a short description, for example:
+convention with full-word prefixes, followed by the issue number and a short
+description, for example:
 
 - `feature/123-add-postcode-search`
 - `bugfix/890-fix-pagination`
@@ -90,7 +97,11 @@ git commit -s -m "Your commit message"
 ```
 
 By signing off, you certify that you wrote the change or otherwise have the
-right to submit it under our licence.
+right to submit it under our licence. OAF does not ask for a Contributor
+Licence Agreement.
+
+Cryptographic signing is not required for repositories on GitHub. Projects on
+GitLab require a verified signature.
 
 ## Other contributors
 
@@ -151,21 +162,6 @@ mark its concerns as resolved.
 Reviews help us share knowledge and keep `main` healthy. Repositories use a
 `CODEOWNERS` file to request reviews from the right people. A review is about
 understanding and improving the change together, not gatekeeping.
-
-## Open questions
-
-These points were raised but not yet settled. We will update this guide once
-the team decides:
-
-- **Branch prefix wording:** whether to standardise on full words
-  (`feature/`, `bugfix/`) or short forms (`feat/`). This guide currently uses
-  the full-word forms from Conventional Branch.
-- **Cryptographic signing:** whether to require GPG-signed commits in addition
-  to the DCO sign-off.
-- **Staging conventions:** whether to define a single org-wide approach to
-  staging environments and branches.
-- **Contributor Licence Agreement:** we removed the CLA requirement for now.
-  Whether to reinstate one, and in what form, is still open.
 
 ---
 
