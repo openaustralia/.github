@@ -6,7 +6,7 @@ body:
   - type: dropdown
     id: service
     attributes:
-      label: Which service is this about?
+      label: Which site is this about?
       options:
         - Planning Alerts
         - Right to Know

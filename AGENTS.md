@@ -8,11 +8,14 @@ The first section, "Working as an agent in any OAF repository", is org-wide.
 Other repositories' `AGENTS.md` files should reference it rather than copy it,
 because copies drift. Fetch the current version immediately with:
 
-`curl -fsSL https://raw.githubusercontent.com/openaustralia/.github/main/AGENTS.md`
+`curl -fsSL https://gitlab.com/openaustralia/templates/-/raw/main/AGENTS.md`
 
-Any equivalent fetch works: a web fetch of that URL, `gh api` if the GitHub
-CLI is installed, or a local clone of this repository beside the one being
-worked on. Don't assume any particular tool is present.
+This file lives in [`openaustralia/templates`](https://gitlab.com/openaustralia/templates)
+on GitLab and is copied to [`openaustralia/.github`](https://github.com/openaustralia/.github)
+on GitHub, so `https://raw.githubusercontent.com/openaustralia/.github/main/AGENTS.md`
+serves the same text. Any equivalent fetch works: a web fetch of either URL,
+`glab` or `gh` if installed, or a local clone of this repository beside the
+one being worked on. Don't assume any particular tool is present.
 
 ## Working as an agent in any OAF repository
 
@@ -34,23 +37,27 @@ worked on. Don't assume any particular tool is present.
 - Be concise: include only the words and information people need. Code
   and its comments already explain what and why - link to them, with enough
   context for the reader to decide whether to follow it.
-- Disclose AI involvement in both places `.github/CONTRIBUTING.md` asks for:
-  an `Assisted-by: <agent-name>:<model-id>` trailer on each commit, and a note
-  in the pull request description. Report the model actually used, not a
+- Disclose AI involvement in both places the contributing guide asks for
+  ([`CONTRIBUTING.md`](CONTRIBUTING.md) for GitLab,
+  [`.github/CONTRIBUTING.md`](.github/CONTRIBUTING.md) for GitHub): an
+  `Assisted-by: <agent-name>:<model-id>` trailer on each commit, and a note
+  in the merge or pull request description. Report the model actually used, not a
   remembered default.
-- When leaving a PR review comment, give the actual replacement code instead
+- When leaving a review comment, give the actual replacement code instead
   of describing the change, but only when a) there are no remaining decisions
   to make, b) it replaces just one section of code, and c) it is not
   significantly longer than describing the change would be. The comment then
   reduces to the code plus a short line on the reason for the change. If any
   condition fails, describe the change in prose as usual.
 - Cite sources where you can. If you adapt code or an approach from an
-  identifiable source, note the reference and its licence in the commit or PR
-  description so reviewers can check for licence compatibility and gotchas.
-- `.github/CONTRIBUTING.md` is still marked as evolving (see the "Open
-  questions" section at the end of it), so don't present unsettled points as
-  decided. Whether OAF reinstates a contributor licence agreement is one of
-  those open questions.
+  identifiable source, note the reference and its licence in the commit, merge
+  request or pull request description so reviewers can check for licence compatibility and gotchas.
+- The four questions the July 2026 contributing guide left open were settled
+  on 2026-09-30: full-word branch prefixes, project-specific staging, no
+  Contributor Licence Agreement, and a verified signature on every commit
+  pushed to GitLab. Repositories that stay on GitHub do not require
+  signatures. DCO sign-off is encouraged on both hosts, but requiring it is
+  paused.
 
 ### How to operate
 
@@ -87,17 +94,17 @@ worked on. Don't assume any particular tool is present.
   asked you to commit: `git add` the files, then write the proposed message
   (with the `Assisted-by:` trailer) to `.git/GITGUI_MSG` and display it.
   Check that file first; if it already has content, ask before overwriting.
-  The DCO sign-off in `.github/CONTRIBUTING.md` is a certification only a
-  person can make, so the commit is normally the human's deliberate act.
+  A DCO sign-off is a certification only a person can make, so the commit
+  is normally the human's deliberate act.
   Never add `Signed-off-by` or `Co-authored-by` on an AI agent's behalf, and
   never strip a human's.
-- Don't hard-wrap sentences in prose in pull request descriptions, issue bodies, issue comments, or review comments, in any OAF repository.
+- Don't hard-wrap sentences in prose in merge or pull request descriptions, issue bodies, issue comments, or review comments, in any OAF repository, on GitLab or GitHub.
   GitHub renders each newline in those fields as a line break, so text wrapped at a column width comes out ragged.
   Write one sentence per line instead, however long that line gets, and check the rendered result after posting.
   This gives each sentence equal emphasis by starting at the left margin, and balances GitHub's hard-wrap behaviour against long lines being awkward in some text editors.
   This applies to bodies passed via `--body`, `--body-file`, or a heredoc just as much as to text typed into the web UI.
   Hard-wrapping markdown files committed to a repository is a different matter and stays fine.
-- Keep a pull request description to what a reviewer needs: two or three
+- Keep a merge or pull request description to what a reviewer needs: two or three
   sentences on what changed and why, or the same in dot points, plus a
   sentence or two on how you checked it. The diff already shows what changed
   line by line, so spend the description on what it can't, the reason, the
@@ -106,9 +113,11 @@ worked on. Don't assume any particular tool is present.
   audits of your own earlier work belong in a review comment, where a reviewer
   can reply to them. Delete a template section that doesn't apply rather than
   filling it with "N/A".
-- PRs an agent creates are opened as drafts and assigned to the human driving
-  the change, not to the agent. Taking a PR out of draft is the human's call.
-- GitHub issues have no draft state. Don't create one directly, draft the
+- Merge or pull requests an agent creates are opened as drafts and assigned
+  to the human driving the change, not to the agent. Taking one out of draft
+  is the human's call. On GitLab, agents open merge requests as the
+  `oaf-agent` account, so the human who signed the commits can approve them.
+- Issues on GitHub and GitLab have no draft state. Don't create one directly, draft the
   title and body for the human to file themselves, unless they've explicitly
   asked you to create it this time.
 - Never commit real personal details, credentials, or secrets; use fictional
@@ -125,45 +134,60 @@ worked on. Don't assume any particular tool is present.
   they came from the same session or review pass.
 - Hyperlink a reference to a specific code or document section, where
   possible, instead of only naming it in prose.
-- When reviewing someone else's pull request, prefer leaving a fix
-  as a GitHub suggested change or comment. Only push a commit to
-  a team member's PR when it is small, unambiguous and uncontroversial.
+- When reviewing someone else's merge or pull request, prefer leaving a fix
+  as a suggested change or comment. Only push a commit to a team member's
+  branch when it is small, unambiguous and uncontroversial.
 
-## About the openaustralia/.github repository
+## About this repository
 
 Everything above is org-wide. This section and the next are about this
 repository itself, so a reader who fetched this file from another
 repository can stop here.
 
-`openaustralia/.github` is a [GitHub special repository](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file):
-files under `.github/` here are inherited by every repository in the
-`openaustralia` org that doesn't provide its own copy. `profile/README.md` is
-unrelated to that mechanism. It's the org's [profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#adding-a-public-profile-readme-for-your-organization),
-shown at github.com/openaustralia. Don't confuse it with the root `README.md`,
-which documents this repository itself.
+This repository is [`openaustralia/templates`](https://gitlab.com/openaustralia/templates)
+on GitLab, where changes are made through merge requests per
+[`CONTRIBUTING.md`](CONTRIBUTING.md). Its `main` branch is copied to
+[`openaustralia/.github`](https://github.com/openaustralia/.github) on GitHub,
+so the two always hold the same history. Never commit to `.github` directly:
+the next copy would fail, or overwrite the change.
 
-There is no build, lint, or test step. The repository is markdown, one
-`CODEOWNERS` file, one `FUNDING.yml`, and the two issue forms under
-`.github/ISSUE_TEMPLATE/`. Changes are reviewed by opening a PR against `main`
-per `.github/CONTRIBUTING.md`.
+It serves both hosts:
 
-The issue forms are the one part with a schema worth checking before you push.
-Validate them against the [GitHub issue-forms schema](https://www.schemastore.org/github-issue-forms.json)
+- **GitLab:** every project in the `openaustralia` group inherits the issue
+  and merge request templates under `.gitlab/`, because this is the group's
+  template project. The root `CONTRIBUTING.md` is the GitLab guide.
+  `pointers/` holds the small files each project gets at its Cutover.
+- **GitHub:** `openaustralia/.github` is a [GitHub special repository](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file):
+  files under `.github/` are inherited by every repository in the
+  `openaustralia` org that doesn't provide its own copy, so
+  `.github/CONTRIBUTING.md` is the GitHub guide. `profile/README.md` is
+  unrelated to that mechanism. It's the org's [profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#adding-a-public-profile-readme-for-your-organization),
+  shown at github.com/openaustralia.
+
+The GitLab group's own README is in the
+[`gitlab-profile`](https://gitlab.com/openaustralia/gitlab-profile) project,
+not here. Don't confuse either profile with the root `README.md`, which
+documents this repository.
+
+There is no build, lint, or test step. The GitHub issue forms are the one
+part with a schema worth checking before you push. Validate them against the
+[GitHub issue-forms schema](https://www.schemastore.org/github-issue-forms.json)
 rather than guessing at the syntax. Nothing in this repository runs that check
 for you, and the forms only render on the default branch, so the first real
-confirmation is opening a new issue after merge.
+confirmation is opening a new issue after the copy to GitHub.
 
 ## Files that reference each other
 
 Several files cross-reference one another by content, not by any tooling.
 Keep them consistent by hand when editing:
 
-- OAF's five public services are listed in **four** places: the "Our services"
-  table in `profile/README.md`, the "Support our work" paragraph in that same
-  file, and the "Which service is this about?" dropdown in each of
-  `.github/ISSUE_TEMPLATE/bug_report.yml` and
-  `.github/ISSUE_TEMPLATE/feature_request.yml`. Adding, renaming, or retiring a
-  service means editing all four. Nothing checks this for you.
+- OAF's four Collections and morph.io are listed in **six** places: the "Our
+  Collections" table and the sentence after it in `profile/README.md`, the
+  "Support our work" paragraph in that same file, the "Which site is this
+  about?" dropdown in each of `.github/ISSUE_TEMPLATE/bug_report.yml` and
+  `.github/ISSUE_TEMPLATE/feature_request.yml`, and the same question in each
+  of `.gitlab/issue_templates/Bug.md` and `Feature.md`. Adding, renaming, or
+  retiring one means editing all six. Nothing checks this for you.
 - `.github/CODEOWNERS` names a team (`@openaustralia/staff`) that must
   actually have write access to repos inheriting this file. A team with no
   access is silently ignored by GitHub rather than erroring (see commit
@@ -171,15 +195,20 @@ Keep them consistent by hand when editing:
 - The `type:` key in each issue form (`Bug`, `Feature`) names an issue type
   that must be enabled on the `openaustralia` org. Check the org's issue types
   before changing either value, and confirm the result on a real issue.
-- The `Assisted-by:` example appears in three places:
-  `.github/CONTRIBUTING.md`, the "How OAF writes" subsection here, and the
-  comment at the end of `.github/PULL_REQUEST_TEMPLATE.md`. Changing the
-  separator or the model-id form means editing all three.
-- The pull request description rule is stated in three places: the "How to
-  operate" subsection here, the "Pull requests" list in
-  `.github/CONTRIBUTING.md`, and the comments in
-  `.github/PULL_REQUEST_TEMPLATE.md`. Changing the expected length means
-  editing all three.
+- The `Assisted-by:` example appears in five places: both contributing guides
+  (`CONTRIBUTING.md` and `.github/CONTRIBUTING.md`), the "How OAF writes"
+  subsection here, and the comment at the end of each of
+  `.github/PULL_REQUEST_TEMPLATE.md` and
+  `.gitlab/merge_request_templates/Default.md`. Changing the separator or the
+  model-id form means editing all five.
+- The merge or pull request description rule is stated in five places: the
+  "How to operate" subsection here, the "Merge requests" list in
+  `CONTRIBUTING.md`, the "Pull requests" list in `.github/CONTRIBUTING.md`,
+  and the comments in `.github/PULL_REQUEST_TEMPLATE.md` and
+  `.gitlab/merge_request_templates/Default.md`. Changing the expected length
+  means editing all five.
+- `pointers/AGENTS.md` and the fetch instructions at the top of this file
+  name the same raw URL. Moving this file means editing both.
 - `openaustralia/morph`'s `AGENTS.md` quotes the "Working as an agent in any
   OAF repository" heading and summarises what both of its subsections cover.
   Renaming the heading or moving a rule between subsections means editing
